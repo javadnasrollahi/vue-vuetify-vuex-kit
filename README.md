@@ -1,4 +1,4 @@
-# nomre
+# vue-vuetify-vuex-kit
 
 ## Project setup
 ```
