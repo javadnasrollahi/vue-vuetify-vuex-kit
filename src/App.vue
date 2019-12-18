@@ -1,17 +1,24 @@
 <template>
   <v-app>
+    <v-navigation-drawer
+    v-model="drawer"
+      app
+      overflow
+      right
+    />
     <v-app-bar app>
+      <v-app-bar-nav-icon
+        @click.stop="drawer = !drawer"
+      />
       <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
+        <span>پیام رسان</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn
         text
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
+        rounded
       >
-        <span class="mr-2">Latest Release</span>
+        <span class="mr-2">خروج</span>
       </v-btn>
     </v-app-bar>
 
@@ -30,6 +37,7 @@ export default {
     HelloWorld,
   },
   data: () => ({
+    drawer:true,
     //
   }),
 };
