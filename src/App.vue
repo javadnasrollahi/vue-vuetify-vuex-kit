@@ -11,7 +11,7 @@
         @click.stop="drawer = !drawer"
       />
       <v-toolbar-title class="headline text-uppercase">
-        <span>پیام رسان</span>
+        <span>سایت نمونه</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn
