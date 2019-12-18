@@ -10,7 +10,6 @@ import '@/assets/css/fonts.css'
 
 Vue.config.productionTip = false
 
-
 import helpers from '@/components/hfuncs'
 const plugin = {
   install () {
@@ -18,7 +17,6 @@ const plugin = {
       Vue.prototype.$helpers = helpers
   }
 }
-
 Vue.use(plugin)
 
 new Vue({

@@ -1,44 +1,31 @@
 <template>
   <v-app>
-    <v-navigation-drawer
-    v-model="drawer"
-      app
-      overflow
-      right
-    />
+    <v-navigation-drawer v-model="drawer" app overflow right>
+      
+    </v-navigation-drawer>
     <v-app-bar app>
-      <v-app-bar-nav-icon
-        @click.stop="drawer = !drawer"
-      />
-      <v-toolbar-title class="headline text-uppercase">
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-toolbar-title>
         <span>سایت نمونه</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn
-        text
-        rounded
-      >
-        <span class="mr-2">خروج</span>
+      <v-btn rounded>
+        <span>خروج</span>
       </v-btn>
     </v-app-bar>
-
     <v-content>
-      <HelloWorld/>
+      <router-view />
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld,
-  },
-  data: () => ({
-    drawer:true,
-    //
-  }),
-};
+  export default {
+    name: 'App',
+    data: () => ({
+      drawer: null,
+      //
+    }),
+  };
 </script>
