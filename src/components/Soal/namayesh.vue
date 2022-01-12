@@ -1,7 +1,6 @@
 <template>
   <v-container>
-    <v-layout text-center wrap>
-    </v-layout>
+    نمایش سوال
   </v-container>
 </template>
 

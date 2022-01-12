@@ -1,7 +1,28 @@
 <template>
   <v-app>
     <v-navigation-drawer v-model="drawer" app overflow right>
-      
+      <v-list>
+        <v-list-item to="/">
+          <v-list-item-content>
+            داشبرد
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item to="/exam">
+          <v-list-item-content>
+            آزمون ها
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item to="/question">
+          <v-list-item-content>
+            سوالات
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item to="/student">
+          <v-list-item-content>
+            دانش آموزان
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
     </v-navigation-drawer>
     <v-app-bar app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />

@@ -19,6 +19,9 @@ const plugin = {
 }
 Vue.use(plugin)
 
+
+import { setupComponents } from './configs/setup-components';
+setupComponents(Vue);
 new Vue({
   vuetify,
   store,
