@@ -17,7 +17,7 @@
             <v-btn icon :to="`/question/virayesh/`+item.id">
               <v-icon small color="green">fa fa-edit</v-icon>
             </v-btn>
-            <v-btn icon>
+            <v-btn icon @click="hazfSoal(item.id)">
               <v-icon small color="red">fa fa-trash</v-icon>
             </v-btn>
           </template>
@@ -62,17 +62,39 @@
         },
       ],
     }),
-    created() {
-      this.$store.getters.axios.post("index.php", JSON.stringify({
-        method: "select",
-        sql: "SELECT * FROM `soal`",
-      })).then(res => {
-        if (res.data.Code == 200) {
-          this.items = res.data.Data
-        } else {
-          alert(res.data.Message)
+    methods: {
+      hazfSoal(id) {
+        if (confirm("آیا مطمئنید؟")) {
+          this.$store.getters.axios.post("index.php", JSON.stringify({
+            method: "delete",
+            sql: "DELETE FROM `soal` WHERE `id`=" + id,
+          })).then(res => {
+            if (res.data.Code == 200) {
+              let index = this.items.findIndex(e => e.id == id);
+              if (index > -1) {
+                this.items.splice(index, 1);
+              }
+            } else {
+              alert(res.data.Message)
+            }
+          })
         }
-      })
-    }
+      },
+      getData() {
+        this.$store.getters.axios.post("index.php", JSON.stringify({
+          method: "select",
+          sql: "SELECT * FROM `soal`",
+        })).then(res => {
+          if (res.data.Code == 200) {
+            this.items = res.data.Data
+          } else {
+            alert(res.data.Message)
+          }
+        })
+      },
+    },
+    created() {
+      this.getData();
+    },
   };
 </script>

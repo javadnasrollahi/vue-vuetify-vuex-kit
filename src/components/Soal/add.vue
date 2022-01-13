@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-layout row wrap>
+    <v-layout row wrap  class="mx-4">
       <v-flex xs12>
         <v-text-field
           label="عنوان سوال"

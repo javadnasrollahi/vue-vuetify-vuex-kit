@@ -31,6 +31,11 @@ if(isset($_POST["sql"]) && strlen($_POST["sql"]) > 0 && isset($_POST["method"]) 
     $result = $conn->query($sql);
     if($_POST["method"] == "select"){
         $result = $result->fetch_all(MYSQLI_ASSOC);
+    }else if($_POST["method"] == "selectRow"){
+        $result = $result->fetch_all(MYSQLI_ASSOC);
+        if(count($result) > 0){
+            $result = $result[0];
+        }
     }
     if ($conn->error) {
         $res["Message"] = "Error: " . $sql . "<br>" . $conn->error;
